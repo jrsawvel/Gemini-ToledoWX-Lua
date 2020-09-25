@@ -1,0 +1,25 @@
+{{> header}} 
+{{#lc_alerts_loop}}
+=> {{{wxhome}}}/{{{url}}}    Alert: {{{alert}}}  {{{alerttime}}}
+{{/#lc_alerts_loop}}
+{{#mesoscale_loop}}
+=> {{{wxhome}}}/mesoscale{{{mdnum}}}.gmi    Mesoscale Discussion #{{{mdnum}}} {{{mdtime}}}
+{{/mesoscale_loop}} 
+{{#buttonalerts_loop}}
+=> {{{wxhome}}}/{{{url}}}    {{{alert}}} {{{alerttime}}}
+{{/buttonalerts_loop}}
+=> {{{wxhome}}}/current-conditions.gmi    {{{conditions_weather}}}: {{{conditions_temperature}}} {{{conditions_time}}}
+=> {{{wxhome}}}/radar.gmi                       Radar
+=> {{{wxhome}}}/more-radars-and-maps.gmi        More Radars & Maps
+=> {{{wxhome}}}/forecast.gmi                    7-day Forecast {{{forecast_time}}}
+=> {{{wxhome}}}/hourly-forecast.gmi             Hourly Forecast
+=> {{{wxhome}}}/darksky.gmi                     Dark Sky Info
+=> {{{wxhome}}}/area-forecast-discussions.gmi   Forecast Discussions {{{discussion_time}}}
+=> {{{wxhome}}}/convective-outlook.gmi          Convective Outlook
+=> {{{wxhome}}}/lake-forecast.gmi               Lake Forecast {{{marine_time}}}
+{{#no_important_hazardous_outlook_exists}}
+=> {{{wxhome}}}/hazardous-weather-outlook.gmi   No Hazardous Weather  {{{hazardous_outlook_time}}}
+{{/no_important_hazardous_outlook_exists}}
+=> {{{wxhome}}}/briefing.gmi                    Flash Briefing
+=> {{{wxhome}}}/external-links.gmi              External Links
+{{> footer}}

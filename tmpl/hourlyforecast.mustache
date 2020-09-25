@@ -1,0 +1,15 @@
+{{> header}}
+### Toledo Hourly Forecast
+
+{{#hourly_loop}}
+{{{time}}} - {{{date}}}
+temp: {{{temperature}}} F
+wind: {{{winddirection}}} {{{windspeed}}} mph
+{{#windchillexists}} 
+wind chill: {{{windchill}}} F
+{{/windchillexists}}
+precip chance {{{precipchance}}} % 
+cloud cover amount {{{cloudamount}}} % 
+
+{{/hourly_loop}}
+{{> footer}}

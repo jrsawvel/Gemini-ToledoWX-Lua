@@ -1,0 +1,122 @@
+{{> header}}
+### Toledo Area Forecast Summaries
+
+{{{currently_date_time}}}
+
+
+
+### Now: {{{currently_summary}}} {{{currently_temperature}}} F. {{#use_apparent_temperature}}Feels like {{{currently_apparent_temperature}}}.{{/use_apparent_temperature}} {{{currently_winds}}}
+ 
+Date and Time: {{{currently_date_time}}}
+Summary: {{{currently_summary}}}
+Air Temp: {{{currently_temperature}}} F
+Dew Point: {{{currently_dewpoint}}} F
+Humidity: {{{currently_humidity}}} %
+Wind Direction: {{{currently_wind_direction_fullname}}}
+Wind Speed: {{{currently_wind_speed}}} mph
+Wind Gust: {{{currently_wind_gust}}} mph
+Apparent Air Temp: {{{currently_apparent_temperature}}} F
+Pressure: {{{currently_pressure}}} inches
+UV Index: {{{currently_uvindex_rating}}} : {{{currently_uvindex}}}
+Cloud Cover: {{{currently_cloud_cover}}} % : {{{currently_cloud_cover_description}}}
+Precip Probability: {{{currently_precip_probability}}} %
+Precip Intensity: {{{currently_precip_intensity}}} : {{{currently_precip_description}}}
+Precip Type: {{{currently_precip_type}}}
+Visibility: {{{currently_visibility}}} miles
+Nearest Precip Distance: {{{currently_nearest_precip_distance}}}
+Nearest Precip Bearing: {{{currently_nearest_precip_bearing}}}
+
+
+
+### Next 24 Hours: {{{hourly_summary}}}
+
+{{#hourly_loop}}
+ {{{localDate}}} - {{{GMTDate}}} - 
+ Icon: {{{icon}}}.
+ Temp: {{{temperature}}}.
+ Apparent temp: {{{apparentTemperature}}}.
+ Wind: {{{windDirection}}}.
+ Precip type: {{{precipType}}}.
+ Precip probability: {{{precipProbability}}}.
+ Precip intensity: {{{precipIntensity}}}.
+ Cloud cover amt: {{{cloudCoverAmount}}}.
+ Cloud cover desc: {{{cloudCoverDesc}}}.
+ Humidity: {{{humidity}}}.
+ UVI Index: {{{uviIndex}}}.
+
+{{/hourly_loop}}
+
+
+
+{{#no_alerts}}
+### No alerts exist.
+{{/no_alerts}}
+{{#have_alerts}}
+### Alert(s) exist.
+{{#alerts_loop}}
+{{{title}}}
+{{{description}}}
+Start: {{{startTime}}}
+End: {{{endTime}}}
+=> {{{url}}}    More info
+
+{{/alerts_loop}}
+{{/have_alerts}}
+
+
+
+### Next 7 Days: {{{daily_summary}}}
+
+{{#daily_loop}}
+ {{{date}}} - 
+ {{{summary}}}
+ Cloud cover: {{{cloudCoverDesc}}}.
+ Precip type: {{{precipType}}}.
+{{#useSnowAccumulation}}
+ Snow accumulation: {{{snowAccumulation}}} inches.
+{{/useSnowAccumulation}}
+ Precip probability: {{{precipProbability}}} %.
+ Low temp {{{lowTemp}}} at {{{lowTempTime}}}.
+ High temp {{{highTemp}}} at {{{highTempTime}}}.
+ Dew point {{{dewPoint}}}.
+ Humidity {{{humidity}}}.
+ Apparent high temp {{{apparentTemperatureHigh}}}.
+ Wind: {{{windDirection}}} at {{{windSpeed}}} mph.
+ Sunrise: {{{sunriseTime}}}.
+ Sunset: {{{sunsetTime}}}.
+ Moon: {{{moonPhase}}} = {{{moonPhaseDesc}}}.
+
+{{/daily_loop}}
+
+
+
+### Minute by Minute Forecasts
+
+Sylvania for the next hour: {{{sylvania_minutely_summary}}}
+
+{{#sylvania_minutely_loop}}
+{{{time}}}
+{{#precipChance}}
+ {{{precipProbability}}} % chance of {{{precipIntensity}}} {{{precipType}}}
+{{/precipChance}}
+{{#noPrecipChance}}
+ {{{precipProbability}}} % chance of precip
+{{/noPrecipChance}}
+{{/sylvania_minutely_loop}}
+
+
+Central Toledo for the next hour: {{{toledo_minutely_summary}}}
+
+{{#toledo_minutely_loop}}
+{{{time}}}
+{{#precipChance}}
+ {{{precipProbability}}} % chance of {{{precipIntensity}}} {{{precipType}}}
+{{/precipChance}}
+{{#noPrecipChance}}
+ {{{precipProbability}}} % chance of precip
+{{/noPrecipChance}}
+{{/toledo_minutely_loop}}
+
+
+=> https://darksky.net/forecast/{{{toledo_latitude}}},{{{toledo_longitude}}}    using Dark Sky JSON data
+{{> footer}}
