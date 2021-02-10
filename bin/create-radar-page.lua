@@ -40,9 +40,9 @@ end
 
 ---------------------------------------
 
-download_gif("dtx-loop.gif", "https://radar.weather.gov/ridge/lite/N0R/DTX_loop.gif")
-
-download_gif("iwx-loop.gif", "https://radar.weather.gov/ridge/lite/N0R/IWX_loop.gif")
+-- in december 2020, the nws ended support for these simple, useful animated images in favor of a clunky, bloated radar mess.
+-- download_gif("dtx-loop.gif", "https://radar.weather.gov/ridge/lite/N0R/DTX_loop.gif")
+-- download_gif("iwx-loop.gif", "https://radar.weather.gov/ridge/lite/N0R/IWX_loop.gif")
 
 download_gif("in-oh-radar.gif", "https://climate.cod.edu/data/satellite/1km/Indiana_Ohio/current/Indiana_Ohio.rad.gif")
 

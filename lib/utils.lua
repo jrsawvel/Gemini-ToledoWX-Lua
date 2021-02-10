@@ -127,8 +127,8 @@ function M.get_date_time()
 
 -- damn hack - mar 11, 2018 - frigging isdst does not work as expected. it's always false.
 -- have to use these two lines when appropriate
-time_type = "EDT"
-localsecs = epochsecs - (4 * 3600)
+-- time_type = "EDT"
+-- localsecs = epochsecs - (4 * 3600)
 
     local dt_str = os.date("%a, %b %d, %Y - %I:%M %p", localsecs)
 
