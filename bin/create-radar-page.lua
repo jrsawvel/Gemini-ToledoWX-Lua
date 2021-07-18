@@ -44,10 +44,12 @@ end
 -- download_gif("dtx-loop.gif", "https://radar.weather.gov/ridge/lite/N0R/DTX_loop.gif")
 -- download_gif("iwx-loop.gif", "https://radar.weather.gov/ridge/lite/N0R/IWX_loop.gif")
 
-download_gif("in-oh-radar.gif", "https://climate.cod.edu/data/satellite/1km/Indiana_Ohio/current/Indiana_Ohio.rad.gif")
+-- in june 2021, dupage ended support for these wonderful static gif radar images.
+-- download_gif("in-oh-radar.gif", "https://climate.cod.edu/data/satellite/1km/Indiana_Ohio/current/Indiana_Ohio.rad.gif")
+-- download_gif("mi-radar.gif", "http://climate.cod.edu/data/satellite/1km/Michigan/current/Michigan.rad.gif")
 
-download_gif("mi-radar.gif", "http://climate.cod.edu/data/satellite/1km/Michigan/current/Michigan.rad.gif")
-
+download_gif("det-pon-nws.gif", "https://radar.weather.gov/ridge/lite/KDTX_loop.gif")
+download_gif("n-in-nws.gif",    "https://radar.weather.gov/ridge/lite/KIWX_loop.gif")
 
 page.set_template_name("radar");
 
